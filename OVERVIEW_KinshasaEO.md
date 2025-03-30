@@ -1,6 +1,6 @@
 # 🌍 Overview of Earth Observation data processing for Kinshasa, DRC
 
-This project integrates satellite remote sensing and weather station data for Kinshasa, Democratic Republic of Congo, to support spatiotemporal analyses of environmental conditions relevant to health.
+This project integrates remote sensing (satellite) and weather station data for Kinshasa, Democratic Republic of Congo, to support spatiotemporal analyses of environmental conditions relevant to health.
 
 ---
 
