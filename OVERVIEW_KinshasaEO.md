@@ -19,6 +19,15 @@ We extract daily and monthly weather summaries from **NOAA ISD** for multiple st
 | Maya Maya (Brazzaville) | 644500 | 99999 |
 | N’dolo             | 642110  | 99999  |
 
+**Data files:**
+- [`monthly_weather_Ndjili.csv`](https://github.com/parker-group/Kinshasa_EO/blob/main/monthly_weather_Ndjili.csv)
+- [`monthly_weather_binza.csv`](https://github.com/parker-group/Kinshasa_EO/blob/main/monthly_weather_binza.csv)
+- [`monthly_weather_maya.csv`](https://github.com/parker-group/Kinshasa_EO/blob/main/monthly_weather_maya.csv)
+- [`monthly_weather_ndolo.csv`](https://github.com/parker-group/Kinshasa_EO/blob/main/monthly_weather_ndolo.csv)
+
+**Map of approximate station locations:**
+![Weather Station Locations](https://github.com/parker-group/Kinshasa_EO/blob/main/WeatherStationLocations.png)
+
 ### Processing Steps:
 
 - Download ISD records for 2022–2023 for each station
@@ -39,9 +48,9 @@ We extract daily and monthly weather summaries from **NOAA ISD** for multiple st
 - Time series of **monthly total precipitation**
 - **Comparison plots** of all stations:
 
-![Temperature Comparison](https://github.com/parker-group/Kinshasa_EO/blob/main/docs/temperature_comparison.png)
+![Temperature Comparison](https://github.com/parker-group/Kinshasa_EO/blob/main/temperature_comparison.png)
 
-![Precipitation Comparison](https://github.com/parker-group/Kinshasa_EO/blob/main/docs/precipitation_comparison.png)
+![Precipitation Comparison](https://github.com/parker-group/Kinshasa_EO/blob/main/precipitation_comparison.png)
 
 ---
 
