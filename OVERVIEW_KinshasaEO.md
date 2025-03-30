@@ -1,4 +1,4 @@
-# 🌍 Overview of Remote Sensing and Environmental Data Processing – Kinshasa EO
+# 🌍 Overview of Earth Observation data processing for Kinshasa, DRC
 
 This project integrates satellite remote sensing and weather station data for Kinshasa, Democratic Republic of Congo, to support spatiotemporal analyses of environmental conditions relevant to health.
 
@@ -47,7 +47,7 @@ We extract daily and monthly weather summaries from **NOAA ISD** for multiple st
 
 ## 2. Remote Sensing Data via Google Earth Engine
 
-We use Google Earth Engine (GEE) to extract and export monthly raster data for MODIS vegetation indices, MODIS and Landsat-derived land surface temperature (LST), and ERA5-modeled temperature and precipitation. All rasters are clipped to the Kinshasa buffer polygon and exported to Google Drive.
+We use Google Earth Engine (GEE) to extract and export monthly raster data for MODIS vegetation and surface water/moisture indices, MODIS and Landsat-derived land surface temperature (LST), and ERA5-modeled temperature and precipitation. All rasters are clipped to the Kinshasa buffer polygon and exported to Google Drive.
 
 ### Scripts:
 - **MODIS Vegetation & LST**: [`GEE_MODIS_Kinshasa.js`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_MODIS_Kinshasa.js)
@@ -104,7 +104,7 @@ A QGIS Python script is used to loop over raster files, calculate zonal statisti
 This processing step creates the **master remote sensing summary file**, with all variables and months per health area.
 
 ### Optional Visualization:
-You can also **visualize spatial variation in the remote sensing data by health area** for any given month. For example, below is a choropleth map of MODIS-derived Land Surface Temperature (LST) for a single month:
+You can also **visualize spatial variation in the remote sensing data by health area** for any given month. For example, below is a choropleth map of MODIS-derived Land Surface Temperature (LST) for a single month, created in QGIS:
 
 ![LST Visualization Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png)
 
@@ -126,7 +126,7 @@ A sample time series plot of MODIS-derived LST values across multiple months:
 
 ![MODIS LST Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/MODIS_LST_TemporalPlot.png)
 
-This step helps assess data completeness, detect anomalies, and understand broad environmental patterns in Kinshasa.
+This step helps assess data completeness, detect anomalies, and understand broad environmental patterns in Kinshasa. [For LST, you can see that some data are missing during some months - often because of cloud cover]
 
 ---
 
