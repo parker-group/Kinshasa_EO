@@ -130,7 +130,7 @@ You can also **visualize spatial variation in the remote sensing data by health 
 ![LST Visualization Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png)
 
 
-These data are generated from the original raster data — note that spatial variation is lost, especially in large polygons in the choropleth above:
+These data are generated from the original raster data below. Note that spatial variation is lost, especially in large polygons in the choropleth above. Often we will draw a buffer around a specific location (e.g. geographic coordinates) and then extract summary values (i.e. zonal statistics) to that buffer rather than based on polygons - unless polygons are the unit of interest, or if they're essentially of similar shape/size. 
 
 ![BinzaMalukoMODISLSTExample1](https://github.com/parker-group/Kinshasa_EO/blob/main/BinzaMalukoMODISLSTExample1.png)
 
