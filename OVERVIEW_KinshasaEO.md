@@ -71,8 +71,8 @@ We use Google Earth Engine (GEE) to extract and export monthly raster data for M
 | MODIS       | NDVI         | MODIS_NDVI     |
 | MODIS       | EVI          | MODIS_EVI      |
 | MODIS       | NDWI         | MODIS_NDWI     |
-| MODIS       | LST    | MODIS_LST      |
-| Landsat 8   | LST | Landsat_LST    |
+| MODIS       | LST          | MODIS_LST      |
+| Landsat 8   | LST          | Landsat_LST    |
 | ERA5-Land   | Temp (2m)    | ERA5_Temp      |
 | ERA5-Land   | Precip (mm)  | ERA5_Precip    |
 
@@ -82,6 +82,8 @@ We use Google Earth Engine (GEE) to extract and export monthly raster data for M
 - Scripts apply cloud masking (Landsat), band scaling (MODIS, ERA5), and unit conversions (e.g., Kelvin to Celsius)
 - `.tif` files organized into subfolders by data source for downstream processing
 - **After testing scripts in the GEE Code Editor, batch exports were automated using Google Colab notebooks**, allowing scalable monthly exports without manually clicking "Run" for each task.
+
+> ⚠️ Note: Opening notebooks via “Open in Colab” runs them in your own Google account and does not access the original author's Google Drive or data.
 
 ### Google Colab Notebooks Used:
 - [`GEE_ERA5_Export_Kinshasa.ipynb`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_ERA5_Export_Kinshasa.ipynb)
@@ -127,6 +129,10 @@ You can also **visualize spatial variation in the remote sensing data by health 
 
 ![LST Visualization Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png)
 
+These data are generated from the original raster data — note that spatial variation is lost, especially in large polygons in the choropleth above:
+
+![BinzaMalukoMODISLSTExample1](https://github.com/parker-group/Kinshasa_EO/blob/main/BinzaMalukoMODISLSTExample1.png)
+
 ---
 
 ## 5. Wrangling and Visualization in R
@@ -144,8 +150,8 @@ The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned
 A sample time series plot of MODIS-derived LST values across multiple months:
 
 ![ERA5 Weather Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/ERA5_BinzaMalukoWeather.png)
-This step helps assess data completeness, detect anomalies, and understand broad environmental patterns in Kinshasa.
 
+This step helps assess data completeness, detect anomalies, and understand broad environmental patterns in Kinshasa.
 
 ---
 
