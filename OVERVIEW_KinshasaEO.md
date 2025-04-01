@@ -98,7 +98,7 @@ Each notebook includes a complete Earth Engine export pipeline and is fully link
 
 ---
 
-## 3. Load Polygon Shapefile (Health Areas)
+## 3. Zonal Statistics Calculation (QGIS + Python)
 
 We use a shapefile of **health areas in Kinshasa** as the basis for zonal extraction. This is the same polygon layer used in GEE to clip exported rasters.
 
@@ -106,10 +106,6 @@ We use a shapefile of **health areas in Kinshasa** as the basis for zonal extrac
 ![Shapefile Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExample.png)
 
 This layer is loaded into QGIS and must be the active vector layer during zonal stats processing.
-
----
-
-## 4. Zonal Statistics Calculation (QGIS + Python)
 
 A QGIS Python script is used to loop over raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table.
 
@@ -139,7 +135,7 @@ These data are generated from the original raster data below. Note that spatial 
 
 ---
 
-## 5. Wrangling and Visualization in R
+## 4. Wrangling and Visualization in R
 
 The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned and visualized in R to explore temporal trends and summary patterns.
 
