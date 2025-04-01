@@ -127,9 +127,8 @@ This processing step creates the **master remote sensing summary file**, with al
 ### Optional Visualization:
 You can also **visualize spatial variation in the remote sensing data by health area** for any given month. For example, below is a choropleth map of MODIS-derived Land Surface Temperature (LST) for a single month, created in QGIS:
 
-![LST Visualization Example]([https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png))
-ShapesExampleLST
-https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png
+![LST Visualization Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png)
+
 
 These data are generated from the original raster data — note that spatial variation is lost, especially in large polygons in the choropleth above:
 
