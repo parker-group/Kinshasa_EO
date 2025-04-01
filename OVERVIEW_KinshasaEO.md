@@ -81,7 +81,7 @@ We use Google Earth Engine (GEE) to extract and export monthly raster data for M
 - Files exported with prefix + `YYYY_MM` naming convention
 - Scripts apply cloud masking (Landsat), band scaling (MODIS, ERA5), and unit conversions (e.g., Kelvin to Celsius)
 - `.tif` files organized into subfolders by data source for downstream processing
-- **After testing scripts in the GEE Code Editor, batch exports were automated using Google Colab notebooks**, allowing scalable monthly exports without manually clicking "Run" for each task.
+- **After testing scripts in the GEE Code Editor, batch exports were automated using Google Colab notebooks**, allowing scalable monthly exports without manually clicking "Run" for each task. Best to make sure the script is first working in GEE, can visualize the map layers in GEE as you go, then once the script is working move over to Colab for running batch exports.
 
 ---
 
