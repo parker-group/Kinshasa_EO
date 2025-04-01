@@ -71,8 +71,8 @@ We use Google Earth Engine (GEE) to extract and export monthly raster data for M
 | MODIS       | NDVI         | MODIS_NDVI     |
 | MODIS       | EVI          | MODIS_EVI      |
 | MODIS       | NDWI         | MODIS_NDWI     |
-| MODIS       | LST (Day)    | MODIS_LST      |
-| Landsat 8   | LST (Surface)| Landsat_LST    |
+| MODIS       | LST    | MODIS_LST      |
+| Landsat 8   | LST | Landsat_LST    |
 | ERA5-Land   | Temp (2m)    | ERA5_Temp      |
 | ERA5-Land   | Precip (mm)  | ERA5_Precip    |
 
