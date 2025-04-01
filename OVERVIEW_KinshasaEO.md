@@ -83,6 +83,14 @@ We use Google Earth Engine (GEE) to extract and export monthly raster data for M
 - `.tif` files organized into subfolders by data source for downstream processing
 - **After testing scripts in the GEE Code Editor, batch exports were automated using Google Colab notebooks**, allowing scalable monthly exports without manually clicking "Run" for each task.
 
+### Google Colab Notebooks Used:
+- [`GEE_ERA5_Export_Kinshasa.ipynb`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_ERA5_Export_Kinshasa.ipynb)
+- [`GEE_MODIS_Vege_Export_Kinshasa.ipynb`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_MODIS_Vege_Export_Kinshasa.ipynb)
+- [`GEE_MODIS_LST_Export_Kinshasa.ipynb`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_MODIS_LST_Export_Kinshasa.ipynb)
+- [`GEE_Landsat_LST_Export_Kinshasa.ipynb`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_Landsat_LST_Export_Kinshasa.ipynb)
+
+Each notebook includes a complete Earth Engine export pipeline and is fully linked to the user's Google Drive for storage.
+
 ---
 
 ## 3. Load Polygon Shapefile (Health Areas)
@@ -137,6 +145,7 @@ A sample time series plot of MODIS-derived LST values across multiple months:
 
 ![ERA5 Weather Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/ERA5_BinzaMalukoWeather.png)
 This step helps assess data completeness, detect anomalies, and understand broad environmental patterns in Kinshasa.
+
 
 ---
 
