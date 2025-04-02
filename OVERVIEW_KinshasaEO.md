@@ -107,7 +107,7 @@ We use a shapefile for **health areas in Kinshasa** as the basis for zonal extra
 
 This layer is loaded into QGIS and must be the active vector layer during zonal stats processing.
 
-A QGIS Python script is used to loop over raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table.
+A QGIS Python script is used to loop over raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table. I save the script in a folder on my PC and then direct the Python console in QGIS to its location. It is also possible to run Python script direction through the console. 
 
 **Script**: [`RemoteSensZonalStats.py`](https://github.com/parker-group/Kinshasa_EO/blob/main/RemoteSensZonalStats.py)
 
