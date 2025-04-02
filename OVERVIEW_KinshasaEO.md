@@ -60,7 +60,7 @@ We extract daily and monthly weather summaries from **NOAA ISD** for multiple st
 
 ## 2. Remote Sensing Data via Google Earth Engine
 
-We use Google Earth Engine (GEE) to extract and export monthly raster data for MODIS vegetation and surface water/moisture indices, MODIS and Landsat-derived land surface temperature (LST), and ERA5-modeled temperature and precipitation. All rasters are clipped to the Kinshasa buffer polygon and exported to Google Drive.
+We use Google Earth Engine (GEE) to extract and export monthly raster data for MODIS vegetation and surface water/moisture indices, MODIS and Landsat-derived land surface temperature (LST), and ERA5-modeled temperature and precipitation. All rasters are clipped to a Kinshasa area polygon shapefile (health area shapefile) and exported to Google Drive.
 
 ### Scripts:
 - **MODIS Vegetation & LST**: [`GEE_MODIS_Kinshasa.js`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_MODIS_Kinshasa.js)
@@ -100,7 +100,7 @@ Each notebook includes a complete Earth Engine export pipeline and is fully link
 
 ## 3. Zonal Statistics Calculation (QGIS + Python)
 
-We use a shapefile of **health areas in Kinshasa** as the basis for zonal extraction. This is the same polygon layer used in GEE to clip exported rasters.
+We use a shapefile for **health areas in Kinshasa** as the basis for zonal extraction. This is the same polygon layer used in GEE to clip exported rasters. Presumably we could do the zonal calculations in GEE as well, but for now it seems more efficient to have the time series of rasters in a local hard drive and running the zonal stats in QGIS is quite fast. If we need to do it again at different aggregations it is also easy since everything is local now. 
 
 **Example preview**:
 ![Shapefile Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExample.png)
