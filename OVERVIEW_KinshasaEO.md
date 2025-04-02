@@ -1,7 +1,7 @@
 # 🌍 Overview of Earth Observation data processing for Kinshasa, DRC
 
-This project integrates remote sensing (satellite) and weather station data for Kinshasa, Democratic Republic of Congo, to support spatiotemporal analyses of environmental conditions relevant to health.
-For a description of the remote sensing data sources and the science behind them, see this document: [`Remote Sensing Data Descriptions`](https://github.com/parker-group/Kinshasa_EO/blob/main/EO_Products.odt)
+This project uses remote sensing (satellite) and weather station data for Kinshasa, Democratic Republic of Congo (DRC), to support spatiotemporal analyses of environmental conditions relevant to health. 
+For a brief description of the remote sensing data sources and the science behind them, see this document: [`Remote Sensing Data Descriptions`](https://github.com/parker-group/Kinshasa_EO/blob/main/EO_Products.odt)
 
 ---
 
@@ -31,7 +31,7 @@ We extract daily and monthly weather summaries from **NOAA ISD** for multiple st
 
 ### Processing Steps:
 
-- Download ISD records for 2022–2023 for each station
+- Download ISD records for 2022–2023 for each station (data are hourly)
 - Clean and quality-control temperature and precipitation values
 - Generate:
   - **Daily summaries**: mean temperature and total precipitation
@@ -60,7 +60,7 @@ We extract daily and monthly weather summaries from **NOAA ISD** for multiple st
 
 ## 2. Remote Sensing Data via Google Earth Engine
 
-We use Google Earth Engine (GEE) to extract and export monthly raster data for MODIS vegetation and surface water/moisture indices, MODIS and Landsat-derived land surface temperature (LST), and ERA5-modeled temperature and precipitation. All rasters are clipped to a Kinshasa area polygon shapefile (health area shapefile) and exported to Google Drive.
+We use Google Earth Engine (GEE) to extract and export monthly raster data for MODIS vegetation and surface water/moisture indices, MODIS and Landsat-derived land surface temperature (LST), and ERA5-modeled temperature and precipitation. All rasters are clipped to a Kinshasa area polygon shapefile (health area shapefile - plotted below) and exported to Google Drive.
 
 ### Scripts:
 - **MODIS Vegetation & LST**: [`GEE_MODIS_Kinshasa.js`](https://github.com/parker-group/Kinshasa_EO/blob/main/GEE_MODIS_Kinshasa.js)
@@ -100,14 +100,14 @@ Each notebook includes a complete Earth Engine export pipeline and is fully link
 
 ## 3. Zonal Statistics Calculation (QGIS + Python)
 
-We use a shapefile for **health areas in Kinshasa** as the basis for zonal extraction. This is the same polygon layer used in GEE to clip exported rasters. Presumably we could do the zonal calculations in GEE as well, but for now it seems more efficient to have the time series of rasters in a local hard drive and running the zonal stats in QGIS is quite fast. If we need to do it again at different aggregations it is also easy since everything is local now. 
+We use a shapefile for **health areas in Kinshasa** as the basis for zonal extraction. This is the same polygon layer used in GEE to clip exported rasters. Presumably we could do the zonal calculations in GEE as well, but for now it seems more efficient to have the time series of rasters in a local hard drive and running the zonal stats in QGIS is quite fast. If we need to recalculate zonal statistics at other aggregations it is also easy since everything is local now. 
 
 **Example preview**:
 ![Shapefile Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExample.png)
 
 This layer is loaded into QGIS and must be the active vector layer during zonal stats processing.
 
-A QGIS Python script is used to loop over raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table. I save the script in a folder on my PC and then direct the Python console in QGIS to its location. It is also possible to run Python script direction through the console. 
+A QGIS Python script is used to loop over raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table. I save the script in a folder on my PC and then direct the Python console in QGIS to its location. It is also possible to run Python script directly through the console. 
 
 **Script**: [`RemoteSensZonalStats.py`](https://github.com/parker-group/Kinshasa_EO/blob/main/RemoteSensZonalStats.py)
 
