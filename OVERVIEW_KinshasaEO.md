@@ -151,7 +151,16 @@ A sample time series plot of ERA5 temperature and precipitation values across mu
 
 ![ERA5 Weather Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/ERA5_BinzaMalukoWeather.png)
 
-This step helps assess data completeness, detect anomalies, and understand broad environmental patterns in Kinshasa.
+A sample time series plot of MODIS-derived LST (land surface temperature) values over time:
+
+![MODIS LST Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/MODIS_LST_BinzaMaluko.png)
+
+A sample time series plot of MODIS-derived NDVI, EVI, and NDWI values over time:
+
+![MODIS Vege Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/MODIS_LST_BinzaMaluko.png)
+
+
+Looking at your data can help with assessing data completeness, detect anomalies, and understand broad environmental patterns.
 
 ---
 
