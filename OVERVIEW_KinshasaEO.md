@@ -147,7 +147,7 @@ The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned
 - Plot time series of environmental indicators across time
 
 ### Example Output:
-A sample time series plot of MODIS-derived LST values across multiple months:
+A sample time series plot of ERA5 temperature and precipitation values across multiple months:
 
 ![ERA5 Weather Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/ERA5_BinzaMalukoWeather.png)
 
