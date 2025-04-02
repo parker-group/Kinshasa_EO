@@ -54,7 +54,7 @@ We extract daily and monthly weather summaries from **NOAA ISD** for multiple st
 ![Precipitation Comparison](https://github.com/parker-group/Kinshasa_EO/blob/main/precipitation_comparison.png)
 
 
-*Actual weather station data can be nice because they're 'real' data collected on the ground. However, weather station data often come with lots of messiness too. They must be maintained to remain accurate. Birds can lay nests on rain gauages, etc. 
+*Actual weather station data can be nice because they're 'real' data collected on the ground. However, weather station data often come with lots of messiness too. They must be maintained to remain accurate. Birds can lay nests on rain gauges, etc. 
 
 ---
 
