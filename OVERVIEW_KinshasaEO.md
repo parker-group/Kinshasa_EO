@@ -157,7 +157,7 @@ A sample time series plot of MODIS-derived LST (land surface temperature) values
 
 A sample time series plot of MODIS-derived NDVI, EVI, and NDWI values over time:
 
-![MODIS Vege Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/MODIS_LST_BinzaMaluko.png)
+![MODIS Vege Plot](https://github.com/parker-group/Kinshasa_EO/blob/main/MODIS_Vege_BinzaMaluko.png)
 
 
 Looking at your data can help with assessing data completeness, detect anomalies, and understand broad environmental patterns.
