@@ -7,7 +7,7 @@ For a description of the remote sensing data sources and the science behind them
 
 ## 1. Weather Station Data: Download and Processing
 
-We extract daily and monthly weather summaries from **NOAA ISD** for multiple stations in and around Kinshasa. This is handled using the [`rnoaa`](https://docs.ropensci.org/rnoaa/) package and organized into clean datasets with standardized naming and formatting. All output is saved as `.csv` files and visualized as time series plots.
+We extract daily and monthly weather summaries from **NOAA ISD** for multiple stations in and around Kinshasa. This is handled using the [`rnoaa`](https://docs.ropensci.org/rnoaa/) package and organized into clean datasets with standardized naming and formatting. All output is saved as `.csv` files and visualized using maps, time series plots, etc.
 
 **Script**: [`KinshasaWeatherStationData.r`](https://github.com/parker-group/Kinshasa_EO/blob/main/KinshasaWeatherStationData.r)
 
