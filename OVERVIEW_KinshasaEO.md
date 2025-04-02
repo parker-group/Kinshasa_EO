@@ -124,12 +124,12 @@ A QGIS Python script is used to loop over raster files, calculate zonal statisti
 This processing step creates the **master remote sensing summary file**, with all variables and months per health area.
 
 ### Optional Visualization:
-You can also **visualize spatial variation in the remote sensing data by health area** for any given month. For example, below is a choropleth map of MODIS-derived Land Surface Temperature (LST) for a single month, created in QGIS:
+You can also **visualize spatial variation in the remote sensing data by health area** for any given month. For example, below is a choropleth map of MODIS-derived Land Surface Temperature (LST) for a single month, created in QGIS (underlying raster is peaking out the edges):
 
 ![LST Visualization Example](https://github.com/parker-group/Kinshasa_EO/blob/main/ShapesExampleLST.png)
 
 
-These data are generated from the original raster data below. Note that spatial variation is lost, especially in large polygons in the choropleth above. Often we will draw a buffer around a specific location (e.g. geographic coordinates) and then extract summary values (i.e. zonal statistics) to that buffer rather than based on polygons - unless polygons are the unit of interest, or if they're essentially of similar shape/size. 
+These data are generated from the original raster data below. Note that spatial variation is lost, especially in large polygons in the choropleth above. Often we will instead draw a buffer around a specific location (e.g. geographic coordinates) and then extract summary values (i.e. zonal statistics) to that buffer rather than based on administrative unit polygons - unless polygons are the unit of interest, or if they're essentially of similar shape/size. 
 
 ![BinzaMalukoMODISLSTExample1](https://github.com/parker-group/Kinshasa_EO/blob/main/BinzaMalukoMODISLSTExample1.png)
 
@@ -137,7 +137,7 @@ These data are generated from the original raster data below. Note that spatial 
 
 ## 4. Wrangling and Visualization in R
 
-The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned and visualized in R to explore temporal trends and summary patterns.
+The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned and visualized in R to explore temporal trends and summary patterns. Currently the data are 'wide' (a row per location - and there is a colummn per unit of time, per environmental measure type) but we will probably want a 'long' dataset for plotting time-series and doing analyses (this will likely mean that location is repeated across several rows and that each row is a different time point). 
 
 **Script**: [`KinshasaWeatherStationData.r`](https://github.com/parker-group/Kinshasa_EO/blob/main/KinshasaWeatherStationData.r)
 
