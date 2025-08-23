@@ -61,9 +61,9 @@ This document provides a brief description of the remote sensing data sources us
 
 ## 6. References
 
-- Huete, A. et al. (2002). Overview of the radiometric and biophysical performance of the MODIS vegetation indices. *Remote Sensing of Environment*.  
-- Wan, Z. (2008). New refinements and validation of the MODIS Land-Surface Temperature/Emissivity products. *Remote Sensing of Environment*.  
-- Muñoz-Sabater, J. et al. (2021). ERA5-Land: a state-of-the-art global reanalysis dataset for land applications. *Earth System Science Data*.  
+- Huete, A. et al. (2002). [Overview of the radiometric and biophysical performance of the MODIS vegetation indices.](https://doi.org/10.1016/S0034-4257(02)00096-2) *Remote Sensing of Environment*.  
+- Wan, Z. (2008). [New refinements and validation of the MODIS Land-Surface Temperature/Emissivity products.](https://doi.org/10.1016/j.rse.2006.06.026) *Remote Sensing of Environment*.  
+- Muñoz-Sabater, J. et al. (2021). [ERA5-Land: a state-of-the-art global reanalysis dataset for land applications.](https://doi.org/10.5194/essd-13-4349-2021) *Earth System Science Data*.  
 
 ---
 
