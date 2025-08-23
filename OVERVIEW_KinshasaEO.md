@@ -1,7 +1,7 @@
 # 🌍 Overview of Earth Observation data processing for Kinshasa, DRC
 
 This project uses remote sensing (satellite) and weather station data for Kinshasa, Democratic Republic of Congo (DRC), to support spatiotemporal analyses of environmental conditions relevant to health. 
-For a brief description of the remote sensing data sources and the science behind them, see this document: [`Remote Sensing Data Descriptions`](https://github.com/parker-group/Kinshasa_EO/blob/main/EO_Products.odt)
+For a brief description of the remote sensing data sources and the science behind them, see this document: [`Remote Sensing Data Descriptions`](https://github.com/parker-group/Kinshasa_EO/EO_Products.md)
 
 ---
 
