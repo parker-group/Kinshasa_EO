@@ -4,27 +4,26 @@ This repository contains scripts, data summaries, and workflows for processing a
 
 We integrate:
 
-- 🌡️ Ground-based **weather station data** (NOAA ISD)
-- 🛰️ **Satellite remote sensing** from MODIS, Landsat, and ERA5
-- 📍 Zonal summaries using **QGIS** and Python
-- 📊 Visualization and wrangling in **R**
+- 🌡️ Ground-based **weather station data** (NOAA ISD)  
+- 🛰️ **Satellite remote sensing** from MODIS, Landsat, and ERA5  
+- 📍 Zonal summaries using **QGIS** and Python  
+- 📊 Visualization and wrangling in **R**  
 
 ---
 
 🔗 **Full documentation and figures:**  
-👉 [OVERVIEW_KinshasaEO.md](https://github.com/parker-group/Kinshasa_EO/blob/main/OVERVIEW_KinshasaEO.md)
+👉 [Overview of Earth Observation data processing](https://github.com/parker-group/Kinshasa_EO/blob/main/docs/OVERVIEW_KinshasaEO.md)
 
 ---
 
-📁 Key files:
-- `KinshasaWeatherStationData.r` – processes ISD weather data
-- `GEE_MODIS_Kinshasa.js` – extracts MODIS vegetation and LST
-- `RemoteSensZonalStats.py` – calculates zonal stats in QGIS
-- `KinshasaZonalStats_All.csv` – master remote sensing summary
+📁 Key files (examples):
+- [`scripts/r/KinshasaWeatherStationData.R`](https://github.com/parker-group/Kinshasa_EO/blob/main/scripts/r/KinshasaWeatherStationData.R) – processes ISD weather data  
+- [`scripts/gee/GEE_MODIS_Kinshasa.js`](https://github.com/parker-group/Kinshasa_EO/blob/main/scripts/gee/GEE_MODIS_Kinshasa.js) – extracts MODIS vegetation and LST  
+- [`scripts/python/RemoteSensZonalStats.py`](https://github.com/parker-group/Kinshasa_EO/blob/main/scripts/python/RemoteSensZonalStats.py) – calculates zonal stats in QGIS  
+- [`data/processed/zonal/KinshasaZonalStats_All.csv`](https://github.com/parker-group/Kinshasa_EO/blob/main/data/processed/zonal/KinshasaZonalStats_All.csv) – master remote sensing summary  
 
 ---
 
 👤 Maintainer: [ORCID: 0000-0002-5352-7338](https://orcid.org/0000-0002-5352-7338)
 
-🧪 *Work in progress — *
-
+🧪 *Work in progress — expect changes as workflows evolve*
