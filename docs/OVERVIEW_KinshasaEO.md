@@ -100,37 +100,65 @@ Each notebook includes a complete Earth Engine export pipeline and is fully link
 
 ## 3. Zonal Statistics Calculation (QGIS + Python)
 
-We use a shapefile for **health areas in Kinshasa** as the basis for zonal extraction. This is the same polygon layer used in GEE to clip exported rasters. Presumably we could do the zonal calculations in GEE as well, but for now it seems more efficient to have the time series of rasters in a local hard drive and running the zonal stats in QGIS is quite fast. If we need to recalculate zonal statistics at other aggregations it is also easy since everything is local now. 
+The remote sensing workflows above produce a time series of raster datasets. Each raster consists of a grid of pixels where every pixel contains an environmental measurement such as vegetation greenness, surface moisture, temperature, or precipitation. These rasters preserve the full spatial variation present in the original satellite or climate product.
 
-**Example preview**:
+### Step 1: Start with the Raster Data
+
+The example below shows a MODIS-derived Land Surface Temperature (LST) raster for a portion of Kinshasa. Each pixel contains an estimated temperature value.
+
+![BinzaMalukoMODISLSTExample1](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/BinzaMalukoMODISLSTExample1.png)
+
+While raster data contain rich spatial information, many analyses require environmental values summarized for administrative units, health areas, villages, survey clusters, or buffers around point locations.
+
+### Step 2: Overlay a Polygon Layer
+
+To summarize environmental conditions for epidemiologic analyses, we overlay a health-area shapefile onto the raster surface. This is the same polygon layer used in Google Earth Engine to clip exported rasters.
+
+**Example health area polygons:**
+
 ![Shapefile Example](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/ShapesExample.png)
 
-This layer is loaded into QGIS and must be the active vector layer during zonal stats processing.
+Each polygon serves as a geographic unit for extracting summary values from the underlying raster data.
 
-A QGIS Python script is used to loop over raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table. I save the script in a folder on my PC and then direct the Python console in QGIS to its location. It is also possible to run Python script directly through the console. 
+### Step 3: Calculate Zonal Statistics
+
+A QGIS Python script is used to loop through raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table.
+
+The script can be executed from the QGIS Python Console after adjusting folder paths to match your local machine.
 
 **Script**: [`RemoteSensZonalStats.py`](https://github.com/parker-group/Kinshasa_EO/blob/main/scripts/python/RemoteSensZonalStats.py)
 
-### Key Features:
-- Automatically loops through each subfolder (e.g., `MODIS_EVI`, `ERA5_Precip`, etc.)
-- Extracts the date (`YYYYMM`) from each `.tif` file name
-- Adds columns to the shapefile with names like: `EVI_202201`, `LLST202307`, `Prcp202212`
-- Exports both the updated shapefile and a `.csv` version for use in R
+#### Key Features
 
-### Output Files:
-- KinshasaZonalStats_All.shp  
+- Automatically loops through each raster subfolder (e.g., `MODIS_EVI`, `MODIS_LST`, `ERA5_Precip`)
+- Extracts the date (`YYYYMM`) from raster file names
+- Calculates zonal statistics for every polygon
+- Adds new columns with names such as:
+  - `EVI_202201`
+  - `LLST202307`
+  - `Prcp202212`
+- Exports both an updated shapefile and a `.csv` file for downstream analysis in R
+
+#### Output Files
+
+- `KinshasaZonalStats_All.shp`
 - [`KinshasaZonalStats_All.csv`](https://github.com/parker-group/Kinshasa_EO/blob/main/data/processed/zonal/KinshasaZonalStats_All.csv)
 
-This processing step creates the **master remote sensing summary file**, with all variables and months per health area.
+This processing step creates the master remote sensing summary dataset, containing environmental measurements for every health area and month.
 
-### Optional Visualization:
-You can also **visualize spatial variation in the remote sensing data by health area** for any given month. For example, below is a choropleth map of MODIS-derived Land Surface Temperature (LST) for a single month, created in QGIS (underlying raster is peaking out the edges):
+### Step 4: Visualize Polygon-Level Summaries
+
+After zonal statistics have been calculated, the summarized values can be visualized as a choropleth map. The example below shows mean MODIS-derived Land Surface Temperature (LST) values for each health area during a single month.
 
 ![LST Visualization Example](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/ShapesExampleLST.png)
 
-These data are generated from the original raster data below. Note that spatial variation is lost, especially in large polygons in the choropleth above. Often we will instead draw a buffer around a specific location (e.g. geographic coordinates) and then extract summary values (i.e. zonal statistics) to that buffer rather than based on administrative unit polygons - unless polygons are the unit of interest, or if they're essentially of similar shape/size. 
+> **Key Concept**
+>
+> Zonal statistics convert spatially continuous raster data into summary values for discrete geographic units. This simplifies downstream analysis but inevitably reduces spatial detail.
 
-![BinzaMalukoMODISLSTExample1](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/BinzaMalukoMODISLSTExample1.png)
+Notice that the choropleth map is derived from the underlying raster shown earlier. Spatial variation within each polygon has been averaged into a single value. This effect becomes more pronounced when polygons are large or environmentally heterogeneous.
+
+For many studies, it may be preferable to construct buffers around specific geographic coordinates and extract zonal statistics to those buffers rather than relying on administrative boundaries. However, when administrative units are the unit of analysis or decision-making, zonal statistics provide a convenient and interpretable summary of environmental conditions.
 
 ---
 
