@@ -204,12 +204,14 @@ The next section demonstrates how the data can be reshaped in R for plotting and
 
 The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned and visualized in R to explore temporal trends and summary patterns. Currently the data are 'wide' (a row per location - and there is a colummn per unit of time, per environmental measure type) but we will probably want a 'long' dataset for plotting time-series and doing analyses (this will likely mean that location is repeated across several rows and that each row is a different time point). 
 
-**Script**: [`KinshasaWeatherStationData.R`](https://github.com/parker-group/Kinshasa_EO/blob/main/scripts/r/KinshasaWeatherStationData.R)
+**Script**: [`Kinshasa_RemoteSensePlots.R`](https://github.com/parker-group/Kinshasa_EO/blob/main/scripts/r/Kinshasa_RemoteSensePlots.R)
 
 ### Tasks Performed:
 - Load the `.csv` file containing zonal summaries per health area
-- Parse and reshape monthly columns (e.g., `EVI_202201`) into long format
-- Plot time series of environmental indicators across time
+- Identify monthly columns by variable prefix (e.g., `MLST`, `Prcp`, `Temp`, `NDVI`, `EVI`, `NDWI`)
+- Reshape selected columns from wide to long format using `pivot_longer()`
+- Extract dates from column names such as `MLST202201`
+- Plot time series of environmental indicators across health areas
 
 ### Example Output:
 A sample time series plot of ERA5 temperature and precipitation values across multiple months:
