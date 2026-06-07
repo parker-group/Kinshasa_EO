@@ -190,9 +190,14 @@ In this example, each row represents a health area in Kinshasa and each column c
 
 > **Key Concept**
 >
-> A time series of raster datasets is transformed into a tabular dataset through repeated zonal extraction. This conversion allows environmental information from satellite imagery and climate products to be integrated with more traditional epidemiologic and demographic datasets and analyzed using standard statistical methods.
+> A time series of raster datasets is transformed into a tabular dataset through repeated zonal extraction. This conversion allows environmental information from satellite imagery and climate products to be integrated with more traditional epidemiologic and demographic datasets and analyzed using standard statistical methods. 
 
-At this stage the data are in a **wide format**, where each environmental variable and time point occupies a separate column. This structure is useful for storage and export, but for many analyses and visualizations we will later reshape the data into a **long format**, where each row corresponds to a single location and time point. The next section demonstrates how this can be done in R.
+The dataset shown above is currently in a **wide format**, where each environmental variable and time point occupies a separate column.
+
+This structure is useful for storage and export, but many analyses and visualizations are easier using a **long format**, where each row corresponds to a single location and time point.
+
+The next section demonstrates how the data can be reshaped in R for plotting and statistical analysis.
+
 ---
 
 ## 4. Wrangling and Visualization in R
