@@ -180,9 +180,19 @@ The figure below shows MODIS-derived Land Surface Temperature (LST) rasters from
 
 The zonal statistics workflow described above is repeated for every raster in the time series. For example, if there are 24 monthly rasters spanning two years, zonal statistics are calculated 24 times for every polygon in the study area.
 
-The result is a table where each row represents a geographic unit (e.g., health area) and each column represents an environmental variable measured at a specific point in time. In this project, zonal statistics from all remote sensing products are combined into a single dataset that can be analyzed in R and linked with health or demographic data.
+The result is a table where each row represents a geographic unit and each column represents an environmental measurement from a specific point in time.
 
+**Example output dataset:**
 
+![Example Zonal Statistics Dataset](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/KinshasaExampleZonaTimes.png)
+
+In this example, each row represents a health area in Kinshasa and each column contains an environmental measurement extracted from a monthly raster. The column names indicate both the environmental variable and the time period (e.g., `EVI_202201` corresponds to the Enhanced Vegetation Index for January 2022).
+
+> **Key Concept**
+>
+> A time series of raster datasets is transformed into a tabular dataset through repeated zonal extraction. This conversion allows environmental information from satellite imagery and climate products to be integrated with more traditional epidemiologic and demographic datasets and analyzed using standard statistical methods.
+
+At this stage the data are in a **wide format**, where each environmental variable and time point occupies a separate column. This structure is useful for storage and export, but for many analyses and visualizations we will later reshape the data into a **long format**, where each row corresponds to a single location and time point. The next section demonstrates how this can be done in R.
 ---
 
 ## 4. Wrangling and Visualization in R
