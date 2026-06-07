@@ -202,16 +202,17 @@ The next section demonstrates how the data can be reshaped in R for plotting and
 
 ## 4. Wrangling and Visualization in R
 
-The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned and visualized in R to explore temporal trends and summary patterns. Currently the data are 'wide' (a row per location - and there is a colummn per unit of time, per environmental measure type) but we will probably want a 'long' dataset for plotting time-series and doing analyses (this will likely mean that location is repeated across several rows and that each row is a different time point). 
+The processed remote sensing data (`KinshasaZonalStats_All.csv`) is next cleaned and visualized in R to explore temporal trends and summary patterns. At this stage the data are stored in a **wide format**, where each row represents a location and each environmental variable and time point occupies a separate column (e.g., `MLST202201`, `MLST202202`, `MLST202203`). For many analyses and visualizations it is more convenient to use a **long format**, where each row represents a single location and time point. The script below reshapes the data using `pivot_longer()`, extracts dates from column names, and generates time-series visualizations.
 
 **Script**: [`Kinshasa_RemoteSensePlots.R`](https://github.com/parker-group/Kinshasa_EO/blob/main/scripts/r/Kinshasa_RemoteSensePlots.R)
 
 ### Tasks Performed:
 - Load the `.csv` file containing zonal summaries per health area
-- Identify monthly columns by variable prefix (e.g., `MLST`, `Prcp`, `Temp`, `NDVI`, `EVI`, `NDWI`)
-- Reshape selected columns from wide to long format using `pivot_longer()`
+- Identify environmental variables using column prefixes (e.g., `MLST`, `Prcp`, `Temp`, `NDVI`, `EVI`, `NDWI`)
+- Reshape data from wide to long format using `pivot_longer()`
 - Extract dates from column names such as `MLST202201`
-- Plot time series of environmental indicators across health areas
+- Generate time-series plots for environmental variables through time
+- Highlight selected locations for comparison against the broader distribution of health areas
 
 ### Example Output:
 A sample time series plot of ERA5 temperature and precipitation values across multiple months:
