@@ -174,7 +174,7 @@ For many studies, it may be preferable to construct buffers around specific geog
 
 In practice, remote sensing analyses rarely involve a single raster. Instead, we often work with a time series of raster datasets, with a new raster generated for each month or date.
 
-The figure below shows MODIS-derived Land Surface Temperature (LST) rasters from four different months. Notice that environmental conditions change over time and that some months contain missing pixels due to cloud cover, atmospheric conditions, sensor limitations, or quality-control filtering.
+The figure below shows MODIS-derived Land Surface Temperature (LST) rasters from four different months. Notice that environmental conditions change over time and that some months contain missing pixels because of cloud cover, atmospheric conditions, sensor limitations, or quality-control filtering.
 
 ![MODIS LST Time Series](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/MODISLSTexample1.png)
 
