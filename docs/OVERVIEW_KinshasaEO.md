@@ -112,7 +112,7 @@ While raster data contain rich spatial information, many analyses require enviro
 
 ### Step 2: Define the unit of analysis
 
-Many analyses require environmental conditions to be summarized for a specific geographic unit. The choice of this unit is an important analytical decision and should be driven by the research question.
+Many analyses require environmental conditions to be summarized for a specific geographic unit. The choice of this unit is an important analytical decision and should be driven by the research question (though sometimes we are limited by data availability).
 
 Common units of analysis include:
 
