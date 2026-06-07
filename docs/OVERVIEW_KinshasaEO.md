@@ -104,7 +104,7 @@ The remote sensing workflows above produce a time series of raster datasets. Eac
 
 ### Step 1: Start with the Raster Data
 
-The example below shows a MODIS-derived Land Surface Temperature (LST) raster for a portion of Kinshasa. Each pixel contains an estimated temperature value.
+The example below shows a MODIS-derived Land Surface Temperature (LST) raster for a portion of Kinshasa. Each pixel contains an estimated temperature value (°C), while the pixel size determines the spatial resolution of the dataset. Smaller pixels generally provide finer spatial detail, whereas larger pixels summarize conditions over larger areas. For MODIS LST products, each pixel represents an area on the ground rather than a single point measurement.
 
 ![BinzaMalukoMODISLSTExample1](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/BinzaMalukoMODISLSTExample1.png)
 
@@ -169,6 +169,19 @@ After zonal statistics have been calculated, the summarized values can be visual
 Notice that the choropleth map is derived from the underlying raster shown earlier. Spatial variation within each polygon has been averaged into a single value. This effect becomes more pronounced when polygons are large or environmentally heterogeneous.
 
 For many studies, it may be preferable to construct buffers around specific geographic coordinates and extract zonal statistics to those buffers rather than relying on administrative boundaries. However, when administrative units are the unit of analysis or decision-making, zonal statistics provide a convenient and interpretable summary of environmental conditions.
+
+### Step 5: Repeat the Process Through Time
+
+In practice, remote sensing analyses rarely involve a single raster. Instead, we often work with a time series of raster datasets, with a new raster generated for each month or date.
+
+The figure below shows MODIS-derived Land Surface Temperature (LST) rasters from four different months. Notice that environmental conditions change over time and that some months contain missing pixels due to cloud cover, atmospheric conditions, sensor limitations, or quality-control filtering.
+
+![MODIS LST Time Series](https://github.com/parker-group/Kinshasa_EO/blob/main/figures/MODISLSTexample1.png)
+
+The zonal statistics workflow described above is repeated for every raster in the time series. For example, if there are 24 monthly rasters spanning two years, zonal statistics are calculated 24 times for every polygon in the study area.
+
+The result is a table where each row represents a geographic unit (e.g., health area) and each column represents an environmental variable measured at a specific point in time. In this project, zonal statistics from all remote sensing products are combined into a single dataset that can be analyzed in R and linked with health or demographic data.
+
 
 ---
 
