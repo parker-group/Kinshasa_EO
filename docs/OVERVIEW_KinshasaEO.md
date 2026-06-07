@@ -110,9 +110,19 @@ The example below shows a MODIS-derived Land Surface Temperature (LST) raster fo
 
 While raster data contain rich spatial information, many analyses require environmental values summarized for administrative units, health areas, villages, survey clusters, or buffers around point locations.
 
-### Step 2: Overlay a Polygon Layer
+### Step 2: Define the unit of analysis
 
-To summarize environmental conditions for epidemiologic analyses, we overlay a health-area shapefile onto the raster surface. This is the same polygon layer used in Google Earth Engine to clip exported rasters.
+Many analyses require environmental conditions to be summarized for a specific geographic unit. The choice of this unit is an important analytical decision and should be driven by the research question.
+
+Common units of analysis include:
+
+- Administrative areas (health areas, wards, districts, counties)
+- Villages or settlements
+- Survey clusters
+- Buffers around households, clinics, schools, or GPS locations
+- Ecological or watershed boundaries
+
+In this example, we use health areas in Kinshasa as the unit of analysis.
 
 **Example health area polygons:**
 
@@ -120,7 +130,7 @@ To summarize environmental conditions for epidemiologic analyses, we overlay a h
 
 Each polygon serves as a geographic unit for extracting summary values from the underlying raster data.
 
-### Step 3: Calculate Zonal Statistics
+### Step 3: Calculate zonal statistics
 
 A QGIS Python script is used to loop through raster files, calculate zonal statistics for each raster, and attach the resulting values as new columns in the shapefile attribute table.
 
@@ -146,7 +156,7 @@ The script can be executed from the QGIS Python Console after adjusting folder p
 
 This processing step creates the master remote sensing summary dataset, containing environmental measurements for every health area and month.
 
-### Step 4: Visualize Polygon-Level Summaries
+### Step 4: Visualize polygon-level summaries
 
 After zonal statistics have been calculated, the summarized values can be visualized as a choropleth map. The example below shows mean MODIS-derived Land Surface Temperature (LST) values for each health area during a single month.
 
